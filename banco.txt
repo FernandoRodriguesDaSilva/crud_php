@@ -1,0 +1,9 @@
+create database if not exists db_cadastro;
+
+create table if not exists tb_clientes(
+id int auto_increment not null primary key,
+nome varchar(30)not null,
+email varchar(50) not null unique,
+telefone varchar(16)not null
+)default character set utf8 default collate utf8_general_ci;
+
