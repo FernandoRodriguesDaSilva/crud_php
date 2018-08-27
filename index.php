@@ -1,15 +1,7 @@
 <!-- Exibindo as variaveis de sessão -->
 <?php session_start();?>
-
-
-
-
 <?php include_once("includes/header.inc.php"); ?>
-
 <?php include_once("includes/menu.inc.php"); ?>
-
-
-
 <!-- Formulario cadastro -->
 <div class="row container">
   <p>&nbsp</p>
@@ -40,15 +32,24 @@
       <div class="input-field col s12">
         <i class="material-icons prefix">phone</i>
         <input type="text" name="telefone" placeholder="digite seu telefone"  maxlength="16" required>
-
       </div>
-      <!-- Botoes -->
+
+      <div class="col s12"><p>Selecione as datas de entrada e saída</p></div>
+
       <div class="input-field col col-sm-12">
-        <input type="submit" value="cadastrar" class="btn blue">
-        <input type="reset" value="Limpar" class="btn red">
-      </div>
-    </fieldset>
-  </form>
-</div>
+       <input type="date" name="entrada" class="validate" id="entrada" required>
+     </div>
+     <div class="input-field col s12 m6">
+      <input type="date" name="saida" class="validate" id="saida" required>
+    </div>
 
+    <!-- Botoes -->
+    <div class="input-field col col-sm-12">
+      <input type="submit" value="cadastrar" class="btn blue">
+      <input type="reset" value="Limpar" class="btn red">
+    </div>
+    
+  </fieldset>
+</form>
+</div>
 <?php include_once("includes/footer.inc.php");?>

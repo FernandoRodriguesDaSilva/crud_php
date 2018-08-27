@@ -6,9 +6,11 @@ include 'conexao.php';
 $nome     = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 $email    = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_NUMBER_INT);
+$entrada = filter_input(INPUT_POST, 'entrada', FILTER_SANITIZE_NUMBER_INT);
+$saida = filter_input(INPUT_POST, 'saida', FILTER_SANITIZE_NUMBER_INT);
 
 // testar se email já existe
-$querySelect = $link->query("select email from tb_clientes");
+$querySelect = $link->query("select email from tb_clientes"); 
 $array_emails = [];
 
 while($emails = $querySelect->fetch_assoc()){
@@ -20,7 +22,7 @@ if(in_array($email,$array_emails)){
 	$_SESSION['msg'] = "<p class='center red-text'>".'Já existe um cliente cadastrado com esse email'."</p>";
 	header("Location:../index.php");
 }else { // se email estiver certo então adiciona no banco de dados
-	$queryInsert = $link->query("INSERT INTO tb_clientes VALUES(DEFAULT,'$nome','$email','$telefone')");
+	$queryInsert = $link->query("INSERT INTO tb_clientes VALUES(DEFAULT,'$nome','$email','$telefone','$entrada','$saida')");
 	// se alguma linha for afetada
 	$affected_rows = mysqli_affected_rows($link);
 	// se uma linha for afetada na tabela

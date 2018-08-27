@@ -48,12 +48,25 @@ while ($registros = $querySelect->fetch_assoc()){
 				<i class="material-icons prefix">phone</i>
 				<input type="text" name="telefone" value="<?php echo $telefone ?>" placeholder="digite seu telefone"  maxlength="16" required>
 
+				<div class="input-field col col-sm-12">
+					<input type="date" name="entrada" value="<?php echo $entrada ?>"  required>
+				</div>
+
+				<div class="input-field col s12 m6">
+					<input type="date" name="saida" value="<?php echo $saida ?>" required>
+				</div>
 			</div>
 			<!-- Botoes -->
 			<div class="input-field col col-sm-12">
 				<input type="submit" value="alterar" class="btn blue">
 				<a class="btn red" href="consulta.php">cancelar</a>
 			</div>
+
+
+
+
+
+
 		</fieldset>
 	</form>
 </div>
