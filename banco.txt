@@ -4,6 +4,8 @@ create table if not exists tb_clientes(
 id int auto_increment not null primary key,
 nome varchar(30)not null,
 email varchar(50) not null unique,
+entrada date not null,
+saida date not null,
 telefone varchar(16)not null
 )default character set utf8 default collate utf8_general_ci;
 
