@@ -61,12 +61,6 @@ while ($registros = $querySelect->fetch_assoc()){
 				<input type="submit" value="alterar" class="btn blue">
 				<a class="btn red" href="consulta.php">cancelar</a>
 			</div>
-
-
-
-
-
-
 		</fieldset>
 	</form>
 </div>
